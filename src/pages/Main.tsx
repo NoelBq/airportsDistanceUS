@@ -7,11 +7,13 @@ import { AxiosError } from 'axios';
 import { Button } from '@mui/material';
 import Title from '../components/title/Title';
 
+type SetProps = Object | null | any
+
 function Main() {
 
     const [airports, setAirports] = useState([]);
-    const [from, setFrom] = useState(null);
-    const [to, setTo] = useState(null);
+    const [from, setFrom] = useState<SetProps>(null);
+    const [to, setTo] = useState<SetProps>(null);
     const [distanceNMresult, setdistanceNMresult] = useState(0)
     async function getUsAirports() {
         try {
@@ -59,7 +61,7 @@ function Main() {
         }
     }, [from, to])
 
-    const setAirportsForDistance = (value: any, label: string) => {
+    const setAirportsForDistance = (value: Object, label: string) => {
         if (label === 'from') {
             setFrom(value)
         } else if (label === 'to') {
@@ -79,9 +81,9 @@ function Main() {
                     <div className=''>
                         <InputsContainer distanceprop={distanceNMresult} handleCalculateDistance={setAirportsForDistance} airports={airports} />
                     </div>
-                    <div>
-                        <Button className='btn' onClick={resetVal} variant="outlined">Reset</Button>
-                    </div>
+
+                    <Button className='btn' onClick={resetVal} variant="outlined">Reset</Button>
+
                 </div>
 
             </div>

@@ -11,8 +11,8 @@ function Input({airports, label, handleCalculateDistance}:any) {
   return (
     <Stack spacing={2} width="250px" margin={2}>
         <Autocomplete 
+            isOptionEqualToValue={(option, value) => option.name === value.name}
              sx={{ width: 250 }}
-
             options={airports}
             filterOptions={filterOptions}
             onChange={(e:any, value:any) => { 

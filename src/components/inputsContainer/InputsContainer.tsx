@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
 import Input from './Input'
 import './styles.css'
 
+type Props = {
+    distanceprop: number;
+    airports: string[];
+    handleCalculateDistance: (value: Object, label: string) => void
+}
 
-const InputsContainer = (props: any) => {
+const InputsContainer = (props: Props) => {
+
+ 
 
     return (
         <div className='container'>
@@ -12,7 +18,7 @@ const InputsContainer = (props: any) => {
                 <Input handleCalculateDistance={props.handleCalculateDistance} airports={props.airports} label="to" />
             </div>
             <div className='text'>
-                 {props.distanceprop != 0 && (
+                 {props.distanceprop !== 0 && (
                     <span>Distance in Nautical Miles: {props.distanceprop.toFixed(2)}</span>
                  )}
               
