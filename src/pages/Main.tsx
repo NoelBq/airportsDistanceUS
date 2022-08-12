@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState, ReactElement } from 'react';
+import  { useEffect, useState } from 'react';
 import './styles.css'
 
 import axios from 'axios'
 import InputsContainer from '../components/inputsContainer/InputsContainer';
 import { AxiosError } from 'axios';
 import { Button } from '@mui/material';
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import MapWrapper from '../components/map/MapWrapper'
 import Title from '../components/title/Title';
 
@@ -36,10 +35,6 @@ function Main() {
         let nauticalMiles = km / 1.852
         return nauticalMiles
     }
-
-    const render = (status: Status) => {
-        return <h1>{status}</h1>;
-    };
 
     useEffect(() => {
         (async function () {
