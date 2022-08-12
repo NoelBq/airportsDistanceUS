@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import  { FC, useEffect,  useState } from "react";
 const Marker: FC<google.maps.MarkerOptions> = (options) => {
   const [marker, setMarker] = useState<google.maps.Marker>();
 
@@ -7,7 +7,6 @@ const Marker: FC<google.maps.MarkerOptions> = (options) => {
       setMarker(new google.maps.Marker());
     }
 
-    // remove marker from map on unmount
     return () => {
       if (marker) {
         marker.setMap(null);
