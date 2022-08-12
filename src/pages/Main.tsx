@@ -17,8 +17,8 @@ function Main() {
     const [distanceNMresult, setdistanceNMresult] = useState(0)
     async function getUsAirports() {
         try {
-            // return axios.get(`https://airlabs.co/api/v9/airports?api_key=c713bd92-d8c6-4cbb-b64a-7688ad1260b4&country_code=US`);
-            return axios.get(`http://localhost:3000/airports.json`);
+            return axios.get(`https://airlabs.co/api/v9/airports?api_key=c713bd92-d8c6-4cbb-b64a-7688ad1260b4&country_code=US`);
+            // return axios.get(`http://localhost:3000/airports.json`);
         } catch (error) {
             console.log(error)
         }

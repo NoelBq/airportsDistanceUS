@@ -1,4 +1,4 @@
-import React, { useEffect, ReactElement, useRef } from "react";
+import React, { useEffect, ReactElement, useRef, EffectCallback } from "react";
 import Marker from "./Marker";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { createCustomEqual } from "fast-equals";
