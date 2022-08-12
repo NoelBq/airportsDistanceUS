@@ -5,8 +5,8 @@ function Title() {
   return (
     <>
     <div className='title-container'>
-        <img className='img' src='./logo.png'></img>
-        <h3>Calculate distance between US airports</h3>
+        <img alt="logo" className='img' src='./logo.png'></img>
+        <h3 className='text'>Calculate distance between US airports</h3>
     </div>
     </>
   )

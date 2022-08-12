@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+.content-wrapper {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -21,3 +26,16 @@
   padding-top: 15px;
 
 }
+
+.animation {
+  align-self: flex-end;
+  height: 20%;
+  margin-top: 100px;
+}
+
+
+@media only screen and (max-width: 560px) {
+  .animation {
+    margin-top: 50px;
+  }
+}  

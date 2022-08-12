@@ -8,3 +8,15 @@
 .img {
     width: 200px;
 }
+
+
+@media only screen and (max-width: 320) {
+    .img {
+        width: 100px;
+    }
+    .text {
+        text-align: center;
+        font-size: 10px;
+    }
+    
+}

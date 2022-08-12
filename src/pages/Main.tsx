@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState, ReactElement } from 'react';
 import './styles.css'
 
 import axios from 'axios'
 import InputsContainer from '../components/inputsContainer/InputsContainer';
 import { AxiosError } from 'axios';
 import { Button } from '@mui/material';
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import MapWrapper from '../components/map/MapWrapper'
 import Title from '../components/title/Title';
 
 type SetProps = Object | null | any
 
 function Main() {
-
     const [airports, setAirports] = useState([]);
     const [from, setFrom] = useState<SetProps>(null);
     const [to, setTo] = useState<SetProps>(null);
@@ -36,7 +37,9 @@ function Main() {
         return nauticalMiles
     }
 
-
+    const render = (status: Status) => {
+        return <h1>{status}</h1>;
+    };
 
     useEffect(() => {
         (async function () {
@@ -76,18 +79,19 @@ function Main() {
     return (
         <>
             <div className='wrapper'>
+                <div className='content-wrapper'>
                 <Title />
                 <div className='content'>
                     <div className=''>
-                        <InputsContainer distanceprop={distanceNMresult} handleCalculateDistance={setAirportsForDistance} airports={airports} />
+                        <InputsContainer 
+                            distanceprop={distanceNMresult} 
+                            handleCalculateDistance={setAirportsForDistance} airports={airports} />
                     </div>
-
                     <Button className='btn' onClick={resetVal} variant="outlined">Reset</Button>
-
                 </div>
-
+                </div>
+                <MapWrapper from={from} to={to} />
             </div>
-
         </>
     )
 }
