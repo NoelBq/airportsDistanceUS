@@ -7,11 +7,24 @@
   align-items: center;
 }
 
+.input-from {
+  text-transform: capitalize;
+}
+.input-to {
+  text-transform: capitalize;
+}
+
 .content-wrapper {
   margin-top: 15px;
   margin-bottom: 10px;
+  flex-grow: 1;
+}
 
-
+.container-map {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .content {

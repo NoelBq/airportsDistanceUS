@@ -14,7 +14,7 @@ function Input({airports, label, handleCalculateDistance}:any) {
     <Stack spacing={2} width="250px" margin={2}>
         <Autocomplete 
             isOptionEqualToValue={(option, value) => option.name === value.name}
-             sx={{ width: 250 }}
+            sx={{ width: 250 }}
             options={airports}
             filterOptions={filterOptions}
             onChange={(e:any, value:any) => { 
@@ -28,7 +28,7 @@ function Input({airports, label, handleCalculateDistance}:any) {
                 </li>
               );
             }}
-            renderInput={(params)=> <TextField {...params} label={label}/> } 
+            renderInput={(params)=> <TextField className={`input-${label}`} {...params} label={label}/> } 
             getOptionLabel={(option:any) => option.name}
           />
     </Stack>
