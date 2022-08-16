@@ -1,5 +1,9 @@
 import Input from './Input'
 import './styles.css'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+
 
 type Props = {
     distanceprop: number;
@@ -9,7 +13,7 @@ type Props = {
 
 const InputsContainer = (props: Props) => {
 
- 
+
 
     return (
         <div className='container'>
@@ -18,11 +22,20 @@ const InputsContainer = (props: Props) => {
                 <Input handleCalculateDistance={props.handleCalculateDistance} airports={props.airports} label="to" />
             </div>
             <div className='text'>
-                 {props.distanceprop !== 0 && (
-                    <span>Distance in Nautical Miles: {props.distanceprop.toFixed(2)}</span>
-                 )}
-              
+                {props.distanceprop !== 0 && (
+                    <Card>
+                        <CardContent>
+                    
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                            Distance in Nautical Miles: {props.distanceprop.toFixed(2)}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                )}
+
             </div>
+
         </div>
 
     )

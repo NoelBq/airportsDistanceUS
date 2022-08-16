@@ -9,7 +9,9 @@
 
 .content-wrapper {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+
+
 }
 
 .content {
@@ -27,15 +29,10 @@
 
 }
 
-.animation {
-  align-self: flex-end;
-  height: 20%;
-  margin-top: 100px;
-}
-
 
 @media only screen and (max-width: 560px) {
-  .animation {
-    margin-top: 50px;
+
+  .wrapper { 
+    flex-direction: column;
   }
 }  

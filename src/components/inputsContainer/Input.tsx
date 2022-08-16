@@ -5,7 +5,9 @@ function Input({airports, label, handleCalculateDistance}:any) {
 
   const OPTIONS_LIMIT = 10;
   const filterOptions:any = createFilterOptions({
-    limit: OPTIONS_LIMIT
+    limit: OPTIONS_LIMIT, 
+    matchFrom: 'any',
+    stringify: (option:any) => option.name + option.iata_code,
   });
 
   return (
@@ -21,7 +23,8 @@ function Input({airports, label, handleCalculateDistance}:any) {
             renderOption={(props, option) => {
               return (
                 <li {...props} key={`${option.icao_code}-${option.iata_code}`}>
-                  {option.name}
+                 {option.name} 
+                 ({!option.iata_code ? option.icao_code : option.iata_code})
                 </li>
               );
             }}
