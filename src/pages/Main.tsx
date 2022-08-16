@@ -4,7 +4,6 @@ import './styles.css'
 import axios from 'axios'
 import InputsContainer from '../components/inputsContainer/InputsContainer';
 import { AxiosError } from 'axios';
-import { Button } from '@mui/material';
 import MapWrapper from '../components/map/MapWrapper'
 import Title from '../components/title/Title';
 
@@ -84,7 +83,6 @@ function Main() {
                                 distanceprop={distanceNMresult}
                                 handleCalculateDistance={setAirportsForDistance} airports={airports} />
                         </div>
-                        <Button className='btn' onClick={resetVal} variant="outlined">Reset</Button>
                     </div>
                 </div>
                 <MapWrapper from={from} to={to} />
