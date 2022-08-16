@@ -14,12 +14,13 @@ function Main() {
     const [from, setFrom] = useState<SetProps>(null);
     const [to, setTo] = useState<SetProps>(null);
     const [distanceNMresult, setdistanceNMresult] = useState(0)
-    async function getUsAirports() {
+    async function getUSAirports() {
         try {
-            // return axios.get(`https://airlabs.co/api/v9/airports?api_key=c713bd92-d8c6-4cbb-b64a-7688ad1260b4&country_code=US`);
-            return axios.get(`http://localhost:3000/airports.json`);
+            return await axios.get(`https://airlabs.co/api/v9/airports?api_key=c713bd92-d8c6-4cbb-b64a-7688ad1260b4&country_code=US`);
+            // return axios.get(`http://localhost:3000/airports.json`);
+            // Json is used not to exhaust api limited requests
         } catch (error) {
-            console.log(error)
+            console.log(error) 
         }
     }
 
@@ -38,7 +39,7 @@ function Main() {
     useEffect(() => {
         (async function () {
             try {
-                const res = await getUsAirports();
+                const res = await getUSAirports();
                 const airports: any = res?.data.response;
                 setAirports(airports)
             } catch (error: unknown) {
